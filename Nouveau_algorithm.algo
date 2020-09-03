@@ -1,0 +1,28 @@
+ALGORITHM Sentence_Counters
+VAR
+CountVoyels,CountChar,CountWords,i : INTEGER;
+str:STRING;
+BEGIN
+repeat
+    Write ('write a sentence')
+    Read(str)
+until( str.length>0)
+CountWords:=1;
+CountVoyels:=0;
+CountChar:=0;
+FOR i FROM 1 TO str.length  DO
+    IF (str[i]==" ") THEN
+        CountWords:=CountWords+1;
+    END_IF
+    IF (str[i]=="a"|| str[i]=="o"|| str[i]=="e"|| str[i]=="i"|| str[i]=="y"|| str[i]=="u") THEN
+        CountVoyels:=CountVoyels+1;
+    END_IF
+    IF (str[i]!=" ") THEN
+        CountChar:=CountChar+1;
+    END_IF
+
+END_FOR
+    Write ( CountChar);
+    Write ( CountVoyels);
+    Write ( CountWords);
+END
